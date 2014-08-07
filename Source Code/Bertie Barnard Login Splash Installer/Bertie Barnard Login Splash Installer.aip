@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT type="Advanced Installer" version="1.9" modules="professional" RootPath=".">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="ARPHELPTELEPHONE" Value="6505233"/>
+    <ROW Property="CTRLS" Value="1"/>
+    <ROW Property="ProductCode" Value="{A3A182B7-E904-40EA-887B-3064FF4CDFA2}"/>
+    <ROW Property="ARPPRODUCTICON" Value="controlPanelIcon.exe"/>
+    <ROW Property="DialogBitmap" Value="style5blue_dialog.jpg"/>
+    <ROW Property="Manufacturer" Value="Commerce I.T."/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="VIEWREADME" Value="1"/>
+    <ROW Property="ARPHELPLINK" Value="http://www.commerce.uct.ac.za/commerceit"/>
+    <ROW Property="ProductName" Value="Bertie Barnard Login Splash"/>
+    <ROW Property="ALLUSERS" Value="2"/>
+    <ROW Property="BannerBitmap" Value="style5blue_banner.jpg"/>
+    <ROW Property="ProductVersion" Value="1.0.0"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{8488D2AC-0CB4-406F-B062-0A95CDB20679}"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="TARGETDIR" Directory_Parent="" DefaultDir="SourceDir"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="Bertie_Barnard_Login_Splash.exe" ComponentId="{86F248F3-98C9-4691-B00A-719FCA521BB9}" Directory_="TARGETDIR" Attributes="0" Condition="" KeyPath="Bertie_Barnard_Login_Splash.exe" FullKeyPath="TARGETDIR\Bertie Barnard Login Splash.exe"/>
+    <ROW Component="Message.rtf" ComponentId="{ED362207-E495-479E-8FA6-0C3F8B6B7702}" Directory_="TARGETDIR" Attributes="0" Condition="" KeyPath="Message.rtf" FullKeyPath="TARGETDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Feature_Parent="" Title="MainFeature" Description="Description" Display="2" Level="1" Directory_="TARGETDIR" Attributes="0" Components="Bertie_Barnard_Login_Splash.exe Message.rtf"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="Bertie_Barnard_Login_Splash.exe" Component_="Bertie_Barnard_Login_Splash.exe" FileName="Bertie~1.exe|Bertie Barnard Login Splash.exe" Version="" Language="" Attributes="" SourcePath="..\Bertie Barnard Login Splash\obj\Release\Bertie Barnard Login Splash.exe" SelfReg="false"/>
+    <ROW File="Message.rtf" Component_="Message.rtf" FileName="Message.rtf" Version="" Language="" Attributes="" SourcePath="..\Bertie Barnard Login Splash\obj\Release\Message.rtf" SelfReg="false"/>
+    <ROW File="Readme.txt" Component_="Message.rtf" FileName="Readme.txt" Version="" Language="" Attributes="" SourcePath="..\Bertie Barnard Login Splash\obj\Release\Readme.txt" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_DOWNGRADE" Type="19" Source="" Target="A higher version of [ProductName] is installed."/>
+    <ROW Action="AI_ViewReadme" Type="194" Source="viewer.exe" Target="[#Readme.txt]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR" Type="307" Source="TARGETDIR" Target="[ProgramFilesFolder]\[ProductName]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="UpgradeCode" VersionMin="" VersionMax="ProductVersion" Language="" Attributes="1025" Remove=""/>
+    <ROW UpgradeCode="UpgradeCode" VersionMin="ProductVersion" VersionMax="" Language="" Attributes="2" Remove=""/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiMergeModsComponent">
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="controlPanelIcon.exe" SourcePath="Images\Barnard_Icon.ico" Index="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="style5blue_banner.jpg" SourcePath="&lt;style5blue-banner.jpg&gt;"/>
+    <ROW Name="style5blue_dialog.jpg" SourcePath="&lt;style5blue-dialog.jpg&gt;"/>
+    <ROW Name="viewer.exe" SourcePath="&lt;viewer.exe&gt;"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ATTRIBUTE name="Start" value="WelcomeDlg FolderDlg VerifyReadyDlg"/>
+    <ATTRIBUTE name="Progress" value="ProgressDlg"/>
+    <ATTRIBUTE name="End" value="ExitDialog"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiMediaComponent">
+    <ATTRIBUTE name="InstallationType" value="1"/>
+    <ATTRIBUTE name="MediaSize" value="0"/>
+    <ATTRIBUTE name="Compress" value="1"/>
+    <ATTRIBUTE name="Package" value="6"/>
+    <ATTRIBUTE name="PackageName" value="Bertie Barnard Login Splash Installer"/>
+    <ATTRIBUTE name="IconPath" value="Images\Barnard_Icon.ico?0"/>
+  </COMPONENT>
+</DOCUMENT>
